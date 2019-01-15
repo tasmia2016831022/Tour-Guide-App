@@ -89,7 +89,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
 
     }
 
-    @Override
+   /** @Override
     protected void onStart() {
         super.onStart();
 
@@ -98,7 +98,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
             startActivity(new Intent(this, UserProfile.class));
         }
     }
-
+**/
 
     @Override
     public void onClick(View view) {

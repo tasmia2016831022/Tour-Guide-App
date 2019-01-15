@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dell.tourguide1">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +24,19 @@
         <activity android:name=".SignupPage" />
         <activity android:name=".UserProfile" />
         <activity android:name=".PublicQueryFeed" />
-        <activity android:name=".AuthenticatedUserFeed"></activity>
+        <activity android:name=".AuthenticatedUserFeed" />
+        <activity android:name=".Auth_Profile" />
+        <activity android:name=".Create_Post" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA-ch0iaPEpkOOGkUFIpzRrqoJJ8QvJe0o" />
+
+        <activity
+            android:name=".Search_trial"
+            android:label="Locate User"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MapMarkerDetail"></activity>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 public class SignupPage extends AppCompatActivity implements View.OnClickListener{
 
     ProgressDialog progressing;
+
     EditText signuppageEmail,signuppagePassword;
 
     FirebaseAuth mAuth;

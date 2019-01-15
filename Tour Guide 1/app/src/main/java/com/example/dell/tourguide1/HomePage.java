@@ -8,7 +8,6 @@ import android.widget.Button;
 
 public class HomePage extends AppCompatActivity {
 
-    private Button HomePage_TakeATour;
     private Button HomePage_LogInButton;
     private Button HomePage_SignUpButton;
 

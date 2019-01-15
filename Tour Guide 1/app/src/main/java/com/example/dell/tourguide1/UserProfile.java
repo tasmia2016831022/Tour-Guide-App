@@ -94,14 +94,14 @@ public class UserProfile extends AppCompatActivity {
     }
 
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
         if (mAuth.getCurrentUser() == null) {
             finish();
             startActivity(new Intent(this, UserProfile.class));
         }
-    }
+    }*/
 
     private void loadUserInformation() {
         final FirebaseUser user = mAuth.getCurrentUser();
@@ -246,7 +246,7 @@ public class UserProfile extends AppCompatActivity {
 
     private void GotoAuthFeed()
     {
-        startActivity(new Intent(this,AuthenticatedUserFeed.class));
+        startActivity(new Intent(this,Auth_Profile.class));
     }
 
     private void showImageChooser() {
