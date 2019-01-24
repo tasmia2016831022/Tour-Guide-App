@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "920479814951",
-    "firebase_url": "https://tour-guide-1-c1d4e.firebaseio.com",
-    "project_id": "tour-guide-1-c1d4e",
-    "storage_bucket": "tour-guide-1-c1d4e.appspot.com"
+    "project_number": "339457101451",
+    "firebase_url": "https://from-scratch-26418.firebaseio.com",
+    "project_id": "from-scratch-26418",
+    "storage_bucket": "from-scratch-26418.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:920479814951:android:313d85a32b91d7a1",
+        "mobilesdk_app_id": "1:339457101451:android:a0f195ecd70bc9d2",
         "android_client_info": {
-          "package_name": "com.example.dell.tourguide1"
+          "package_name": "com.example.dell.tourguide2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "920479814951-gk6n3cpnt6phapbgkggscejt8j109k3l.apps.googleusercontent.com",
+          "client_id": "339457101451-o6c6a8tjbaorl6a4c75kmg91sv8tr9f0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.dell.tourguide1",
+            "package_name": "com.example.dell.tourguide2",
             "certificate_hash": "04028d388bd6ec7c6700ed2f258e25c3e4a06736"
           }
         },
         {
-          "client_id": "920479814951-pkru0vgpaq1ompi5i4llg2tcmelaflm0.apps.googleusercontent.com",
+          "client_id": "339457101451-11h2822luu3ajgm3laesgrm7e4jfv2l2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_OkyWWOuUDAsVfp37-2z6vZ9Vcb0pmZs"
+          "current_key": "AIzaSyBRbCsDv3CDBluOo1fVtGfqf0tzU48DMkE"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "920479814951-pkru0vgpaq1ompi5i4llg2tcmelaflm0.apps.googleusercontent.com",
+              "client_id": "339457101451-11h2822luu3ajgm3laesgrm7e4jfv2l2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
