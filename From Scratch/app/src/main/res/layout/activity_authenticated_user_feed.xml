@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AuthenticatedUserFeed"
+    android:id="@+id/drawer_AuthenticatedUser">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F2F1">
+
+    <EditText
+        android:id="@+id/SearchLocation_Auth_edittext"
+        android:layout_width="318dp"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="159dp"
+        android:background="@drawable/signup_edittext"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawableStart="@drawable/ic_search"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_regular"
+        android:hint="Search Location"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/Choose_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Choose The Type below "
+        android:textColor="@color/darkblue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/Search_Auth_button"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/signuppage_button"
+        android:drawableLeft="@drawable/ic_search"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Search"
+        android:textAllCaps="false"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Or_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="189dp"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="OR"
+        android:textColor="@color/darkblue"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/CreatePost_Auth_button"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="121dp"
+        android:background="@drawable/signuppage_button"
+        android:drawableLeft="@drawable/ic_create"
+        android:drawableStart="@drawable/ic_create"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Create Post"
+        android:textAllCaps="false"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radio_Auth_rGrp"
+        android:layout_width="271dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="97dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/ChoosePlace_Auth_rbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_regular"
+            android:text="Place"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/ChooseFood_Auth_rbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_regular"
+            android:text="Food"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/ChooseHotels_Auth_rbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_regular"
+            android:text="Hotels"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+
+</RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/menu"
+        android:layout_gravity = "start"
+        android:id="@+id/nav_viewU">
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
