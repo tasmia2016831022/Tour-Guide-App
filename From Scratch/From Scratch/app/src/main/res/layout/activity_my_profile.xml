@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F2F1"
+    tools:context=".MyProfile">
+
+
+    <TextView
+        android:id="@+id/MyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="My Profile"
+        android:textColor="@color/darkblue"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/DispalyName_MyProfile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="221dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="My Name"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/DisplayEmail_MyProfile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="193dp"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="My Email"
+        android:textColor="@color/darkblue"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/ProfileImageButton"
+        android:layout_width="199dp"
+        android:layout_height="193dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/profile_show"
+        app:srcCompat="@drawable/ic_add_a_photo" />
+
+    <Button
+        android:id="@+id/GoToHomePage_MyProfile"
+        android:layout_width="289dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/signuppage_button"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Home"
+        android:textAllCaps="false"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/signuppage_button"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+</RelativeLayout>
