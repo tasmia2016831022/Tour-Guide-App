@@ -46,7 +46,7 @@
         android:textSize="15sp" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/ProfileImageButton"
         android:layout_width="199dp"
         android:layout_height="193dp"
         android:layout_alignParentTop="true"

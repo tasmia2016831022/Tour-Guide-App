@@ -157,7 +157,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback{
                     circleOptions.strokeColor(Color.CYAN);
                     circleOptions.fillColor(0x4D000080);
 
-                    mMap.addMarker(markerOptions);
+                   // mMap.addMarker(markerOptions);
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
                     mMap.addCircle(circleOptions);
 

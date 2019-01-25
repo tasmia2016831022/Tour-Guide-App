@@ -11,6 +11,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,7 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
     private EditText SignupPassword;
     private Button SignupButton;
     private Button SignupAlreadyLoginButton;
+    private ImageView ProfileImage;
 
     private DatabaseReference UserDataStorage;
     String UserData;

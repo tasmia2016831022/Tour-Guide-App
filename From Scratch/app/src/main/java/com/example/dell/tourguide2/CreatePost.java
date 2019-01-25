@@ -97,6 +97,7 @@ public class CreatePost extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Uri downloadUri = taskSnapshot.getDownloadUrl();
 
+//                    System.out.println(downloadUri.toString() + "This is downloadURI");
                    PostingSupport postingSupport = new PostingSupport(type,area,des,downloadUri.toString(),AuthenticatedUserFeed.username,AuthenticatedUserFeed.username);
                    postedData.child("Posts").child(type).child(location).setValue(postingSupport);
                 }

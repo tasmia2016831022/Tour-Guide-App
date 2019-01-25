@@ -4,7 +4,7 @@ public class PostingSupport {
     private  String Type;
     private String Area;
     private String Description;
-    private static String Imageuri;
+    private String Imageuri;
     private String Key;
     private String UserName;
 
@@ -33,7 +33,7 @@ public class PostingSupport {
         return Description;
     }
 
-    public static String getImageuri() {
+    public  String getImageuri() {
         return Imageuri;
     }
 
@@ -57,7 +57,7 @@ public class PostingSupport {
         Description = description;
     }
 
-    public void setImageuri(String imageuri) {
+    public  void setImageuri(String imageuri) {
         Imageuri = imageuri;
     }
 

@@ -32,88 +32,101 @@
         android:textSize="35sp"
         android:textStyle="bold" />
 
- <EditText
-     android:id="@+id/Name_SignUp_edittext"
-     android:layout_width="347dp"
-     android:layout_height="60dp"
-     android:layout_alignParentTop="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginTop="149dp"
-     android:background="@drawable/signup_edittext"
-     android:drawableLeft="@drawable/ic_person"
-     android:drawableStart="@drawable/ic_person"
-     android:fontFamily="@font/comfortaa_regular"
-     android:hint="Enter Name"
-     android:inputType="text"
-     android:textStyle="bold" />
+    <EditText
+        android:id="@+id/Name_SignUp_edittext"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="195dp"
+        android:background="@drawable/signup_edittext"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawableStart="@drawable/ic_person"
+        android:fontFamily="@font/comfortaa_regular"
+        android:hint="Enter Name"
+        android:inputType="text"
+        android:textStyle="bold" />
 
- <EditText
-     android:id="@+id/Email_SignUp_edittext"
-     android:layout_width="347dp"
-     android:layout_height="60dp"
-     android:layout_alignParentTop="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginTop="226dp"
-     android:background="@drawable/signup_edittext"
-     android:drawableLeft="@drawable/ic_email"
-     android:drawableStart="@drawable/ic_email"
-     android:fontFamily="@font/comfortaa_regular"
-     android:hint="Enter Email Adress"
-     android:inputType="text"
-     android:textStyle="bold" />
+    <EditText
+        android:id="@+id/Email_SignUp_edittext"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="234dp"
+        android:background="@drawable/signup_edittext"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawableStart="@drawable/ic_email"
+        android:fontFamily="@font/comfortaa_regular"
+        android:hint="Enter Email Adress"
+        android:inputType="text"
+        android:textStyle="bold" />
 
- <EditText
-     android:id="@+id/Password_SignUp_edittext"
-     android:layout_width="347dp"
-     android:layout_height="60dp"
-     android:layout_alignParentBottom="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginBottom="204dp"
-     android:background="@drawable/signup_edittext"
-     android:drawableLeft="@drawable/ic_lock"
-     android:drawableStart="@drawable/ic_lock"
-     android:fontFamily="@font/comfortaa_regular"
-     android:hint="Enter Password"
-     android:inputType="text"
-     android:textStyle="bold" />
+    <EditText
+        android:id="@+id/Password_SignUp_edittext"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="161dp"
+        android:background="@drawable/signup_edittext"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawableStart="@drawable/ic_lock"
+        android:fontFamily="@font/comfortaa_regular"
+        android:hint="Enter Password"
+        android:inputType="text"
+        android:textStyle="bold" />
 
- <Button
-     android:id="@+id/Signup_SignUp_button"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_alignParentBottom="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginBottom="135dp"
-     android:background="@drawable/signuppage_button"
-     android:fontFamily="@font/comfortaa_regular"
-     android:text="SignUp"
-     android:textColor="@color/darkblue"
-     android:textStyle="bold" />
+    <Button
+        android:id="@+id/Signup_SignUp_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="99dp"
+        android:background="@drawable/signuppage_button"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="SignUp"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold" />
 
- <Button
-     android:id="@+id/Login_SignUp_button"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_alignParentBottom="true"
-     android:layout_centerHorizontal="true"
-     android:layout_marginBottom="34dp"
-     android:background="@drawable/signuppage_button"
-     android:fontFamily="@font/comfortaa_regular"
-     android:text="Log in"
-     android:textColor="@color/darkblue"
-     android:textStyle="bold" />
+    <Button
+        android:id="@+id/Login_SignUp_button"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/signuppage_button"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Already Have An Account?"
+        android:textAllCaps="false"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/ProfileImage_SignUp_imageview"
+        android:layout_width="131dp"
+        android:layout_height="94dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        app:srcCompat="@drawable/ic_add_a_photo"
+        android:background="@drawable/signup_edittext"/>
+
+    <!--
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="98dp"
-        android:text="Already have an account ?"
-        android:textStyle="bold"
+        android:layout_marginBottom="91dp"
         android:fontFamily="@font/comfortaa_regular"
-        android:textColor="@color/darkblue"/>
+        android:text="Already have an account ?"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold" />
+        -->
 
 
 </RelativeLayout>
