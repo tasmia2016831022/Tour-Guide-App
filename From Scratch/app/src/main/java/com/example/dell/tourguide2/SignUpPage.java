@@ -3,7 +3,9 @@ package com.example.dell.tourguide2;
 import android.accounts.NetworkErrorException;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +25,9 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 public class SignUpPage extends AppCompatActivity implements View.OnClickListener{
 
@@ -31,7 +37,12 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
     private EditText SignupPassword;
     private Button SignupButton;
     private Button SignupAlreadyLoginButton;
+
+    private static final int Gallery_Request = 1;
     private ImageView ProfileImage;
+    private Uri ProfileImageUri = null;
+    StorageReference profileImageStore = FirebaseStorage.getInstance().getReference("User Profile Image");
+
 
     private DatabaseReference UserDataStorage;
     String UserData;
@@ -49,6 +60,7 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
         SignupName = findViewById(R.id.Name_SignUp_edittext);
         SignupEmail = findViewById(R.id.Email_SignUp_edittext);
         SignupPassword = findViewById(R.id.Password_SignUp_edittext);
+        ProfileImage = findViewById(R.id.ProfileImage_SignUp_imageview);
 
         progressDialog = new ProgressDialog(this);
 
@@ -74,6 +86,27 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
             }
         });
 
+        ProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent profileImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                profileImageIntent.setType("image/*");
+                startActivityForResult(profileImageIntent,Gallery_Request);
+
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==Gallery_Request && resultCode==RESULT_OK)
+        {
+            ProfileImageUri = data.getData();
+            ProfileImage.setImageURI(ProfileImageUri);
+        }
     }
 
     private void RegisterUser() {
@@ -132,16 +165,31 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
 
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             uid = user.getUid();
-                            UserInformation userInformation = new UserInformation(name,email,uid,UserImageurl);
-                            UserDataStorage.child("Users:").child(name).setValue(userInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task1) {
-                                    if(task1.isSuccessful())
-                                        Toast.makeText(SignUpPage.this,"Successfull",Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                            finish();
-                            startActivity(new Intent(SignUpPage.this,AuthenticatedUserFeed.class));
+
+                            if(ProfileImageUri != null)
+                            {
+                                StorageReference filepath = profileImageStore.child(ProfileImageUri.getLastPathSegment());
+
+                                filepath.putFile(ProfileImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        Uri downloadUri =taskSnapshot.getDownloadUrl();
+
+                                        UserInformation userInformation = new UserInformation(name,email,uid,downloadUri.toString());
+                                        UserDataStorage.child("Users:").child(name).setValue(userInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task1) {
+                                                if(task1.isSuccessful())
+                                                    Toast.makeText(SignUpPage.this,"Successfull",Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                                        finish();
+                                        startActivity(new Intent(SignUpPage.this,AuthenticatedUserFeed.class));
+                                    }
+                                });
+
+                            }
+
                         }
                         else
                         {
