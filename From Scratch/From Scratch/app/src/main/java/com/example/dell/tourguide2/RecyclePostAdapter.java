@@ -53,6 +53,7 @@ public class RecyclePostAdapter extends RecyclerView.Adapter<RecycleViewHolder>{
 
     @Override
     public int getItemCount() {
+        //return 0;
         return arrayList.size();
     }
 }

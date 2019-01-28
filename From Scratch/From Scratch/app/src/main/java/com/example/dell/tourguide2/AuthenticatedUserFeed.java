@@ -100,6 +100,8 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
                 if (p.getUserEmail().equals(email)) {
                     uid = p.getUid();
                     username = p.getUserName();
+                    System.out.println(uid);
+                    System.out.println(username);
                     //c.setText(username);
 
                 }
