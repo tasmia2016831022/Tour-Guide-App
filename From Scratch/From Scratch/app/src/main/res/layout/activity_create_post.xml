@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatePost">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="       Create Post"
+        android:textSize="35sp"
+        android:fontFamily="@font/comfortaa_regular"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="95dp"
+        android:text="Choose Type :"
+        android:fontFamily="@font/comfortaa_bold"
+        android:textStyle="normal"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_CreatePost_rGrp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/ChoosePlace_Createpost_rbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Place"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/ChooseFood_Createpost_rbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Food"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/ChooseHotel_Createpost_rbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Hotels"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="181dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Enter Area:"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/Area_CreatePost_edittext"
+        android:layout_width="299dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="215dp"
+        android:background="@drawable/signup_edittext"
+        android:drawableLeft="@drawable/ic_add_location"
+        android:drawableStart="@drawable/ic_add_location"
+        android:ems="10"
+        android:hint="  Area"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Write Description :  "
+        android:textColor="@color/darkblue"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/Description_CreatePost_edittext"
+        android:layout_width="294dp"
+        android:layout_height="92dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="165dp"
+        android:background="@drawable/signup_edittext"
+        android:drawableLeft="@drawable/ic_create"
+        android:drawableStart="@drawable/ic_create"
+        android:ems="10"
+        android:hint="  Write something .. "
+        android:inputType="textMultiLine" />
+
+    <ImageButton
+        android:id="@+id/AddImage_CreatePost_imageButton"
+        android:layout_width="159dp"
+        android:layout_height="71dp"
+        android:layout_alignEnd="@+id/radio_CreatePost_rGrp"
+        android:layout_alignTop="@+id/textView11"
+        android:background="@drawable/signup_edittext"
+        app:srcCompat="@drawable/ic_photo" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginBottom="122dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="Add Image: "
+        android:textColor="@color/darkblue"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/Post_CreatePost_button"
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/signuppage_button"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Post"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
