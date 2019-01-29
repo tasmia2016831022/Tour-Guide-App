@@ -23,20 +23,20 @@
         <activity android:name=".SignUpPage" />
         <activity android:name=".LoginPage" />
         <activity android:name=".AuthenticatedUserFeed" />
-
         <activity android:name=".CreatePost" />
         <activity android:name=".UserProfileShow" />
         <activity android:name=".MyProfile" />
         <activity android:name=".Article" />
-        <activity android:name=".ReView"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA-ch0iaPEpkOOGkUFIpzRrqoJJ8QvJe0o" />
+
         <activity
             android:name=".MapActivity"
             android:label="Map"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

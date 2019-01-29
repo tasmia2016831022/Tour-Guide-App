@@ -10,16 +10,18 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 import com.squareup.picasso.Picasso;
 
-public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter{
+public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter {
     private Context context;
 
-    public CustomInfoWindowGoogleMap(Context ctx){
+    public CustomInfoWindowGoogleMap(Context ctx) {
         context = ctx;
     }
+
     @Override
     public View getInfoWindow(Marker marker) {
         return null;
     }
+
     @Override
     public View getInfoContents(Marker marker) {
         View view = ((Activity) context).getLayoutInflater()
@@ -33,11 +35,10 @@ public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter{
         placeName.setText(marker.getSnippet());
         PostingSupport postingSupport = (PostingSupport) marker.getTag();
 
-        try{
+        try {
             Picasso.get().load(postingSupport.getImageuri()).into(img);
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
         return view;

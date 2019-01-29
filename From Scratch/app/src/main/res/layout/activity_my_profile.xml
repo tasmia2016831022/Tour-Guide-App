@@ -45,15 +45,15 @@
         android:textColor="@color/darkblue"
         android:textSize="15sp" />
 
-    <ImageButton
-        android:id="@+id/ProfileImageButton"
+    <ImageView
+        android:id="@+id/ProfileImage_MyProfile_ImageView"
         android:layout_width="199dp"
         android:layout_height="193dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="96dp"
         android:background="@drawable/profile_show"
-        app:srcCompat="@drawable/ic_add_a_photo" />
+        app:srcCompat="@drawable/ic_person" />
 
     <Button
         android:id="@+id/GoToHomePage_MyProfile"
@@ -71,7 +71,7 @@
         android:textSize="20sp"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Logout_MyProfile"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

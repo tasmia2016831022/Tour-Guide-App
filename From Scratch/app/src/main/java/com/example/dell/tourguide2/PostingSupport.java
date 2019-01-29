@@ -1,18 +1,18 @@
 package com.example.dell.tourguide2;
 
 public class PostingSupport {
-    private  String Type;
+    private String Type;
     private String Area;
     private String Description;
     private String Imageuri;
     private String Key;
     private String UserName;
 
-    public PostingSupport(){
+    public PostingSupport() {
 
     }
 
-    public PostingSupport(String type, String area, String description, String imageuri, String key , String userName) {
+    public PostingSupport(String type, String area, String description, String imageuri, String key, String userName) {
         Type = type;
         Area = area;
         Description = description;
@@ -33,7 +33,7 @@ public class PostingSupport {
         return Description;
     }
 
-    public  String getImageuri() {
+    public String getImageuri() {
         return Imageuri;
     }
 
@@ -57,7 +57,7 @@ public class PostingSupport {
         Description = description;
     }
 
-    public  void setImageuri(String imageuri) {
+    public void setImageuri(String imageuri) {
         Imageuri = imageuri;
     }
 

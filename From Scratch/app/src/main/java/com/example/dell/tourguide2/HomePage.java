@@ -21,22 +21,22 @@ public class HomePage extends AppCompatActivity {
         TakeATourHomePage = findViewById(R.id.take_a_tour_Homepage_button);
         LoginHomePage = findViewById(R.id.Login_Homepage_button);
         SignupHomePage = findViewById(R.id.Signup_Homepage_button);
-        
-        
+
+
         TakeATourHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GoToPublicFeed();
             }
         });
-        
+
         LoginHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GoToLoginPage();
             }
         });
-        
+
         SignupHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +53,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     private void GoToLoginPage() {
-        Intent intent = new Intent(HomePage.this,LoginPage.class);
+        Intent intent = new Intent(HomePage.this, LoginPage.class);
         startActivity(intent);
     }
 

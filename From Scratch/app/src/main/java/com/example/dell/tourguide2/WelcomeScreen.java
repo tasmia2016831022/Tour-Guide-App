@@ -18,12 +18,12 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent welcomeToHome = new Intent(WelcomeScreen.this,HomePage.class);
+                Intent welcomeToHome = new Intent(WelcomeScreen.this, HomePage.class);
                 startActivity(welcomeToHome);
 
                 finish();
 
             }
-        },SPLASH_TIME_OUT);
+        }, SPLASH_TIME_OUT);
     }
 }

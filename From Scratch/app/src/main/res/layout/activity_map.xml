@@ -14,4 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         />
+
+    <Button
+        android:id="@+id/goto_recycleView"
+        android:layout_width="236dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/signup_edittext"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Go to post"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 </RelativeLayout>

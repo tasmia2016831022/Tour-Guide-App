@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,15 +26,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AuthenticatedUserFeed extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class AuthenticatedUserFeed extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Button SearchButton , CreatePost;
+    private Button SearchButton, CreatePost;
     private EditText SearchLocation;
     RadioGroup radioGroup;
     String email;
-    static  String username;
+    static String uid, username;
     private DrawerLayout mDrawer;
     private ActionBarDrawerToggle mToggle;
+
+    // private TextView c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
         SearchButton = findViewById(R.id.Search_Auth_button);
         CreatePost = findViewById(R.id.CreatePost_Auth_button);
         radioGroup = findViewById(R.id.radio_Auth_rGrp);
+        //c =findViewById(R.id.Choose_textview);
 
         CreatePost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,21 +61,19 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
             @Override
             public void onClick(View v) {
                 int selected = radioGroup.getCheckedRadioButtonId();
-                RadioButton radioButton = (RadioButton)findViewById(selected);
+                RadioButton radioButton = (RadioButton) findViewById(selected);
 
                 String type = radioButton.getText().toString().trim();
                 String place = SearchLocation.getText().toString().trim();
 
-                Log.d("AuthenticatedUserFeed Click",type);
-                Log.d("AuthenticatedUserFeed",type);
-                Log.d("AuthenticatedUserFeed",type);
-                Log.d("AuthenticatedUserFeed",place);
-                Intent intent = new Intent(AuthenticatedUserFeed.this,MapActivity.class);
-                intent.putExtra("place",place);
-                intent.putExtra("type",type);
+                Log.d("AuthenticatedUserFeed Click", type);
+                Log.d("AuthenticatedUserFeed", type);
+                Log.d("AuthenticatedUserFeed", type);
+                Log.d("AuthenticatedUserFeed", place);
+                Intent intent = new Intent(AuthenticatedUserFeed.this, MapActivity.class);
+                intent.putExtra("place", place);
+                intent.putExtra("type", type);
                 startActivity(intent);
-
-
 
 
             }
@@ -82,7 +84,7 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
 
         mDrawer = findViewById(R.id.drawer_AuthenticatedUser);
 
-        mToggle = new ActionBarDrawerToggle(AuthenticatedUserFeed.this,mDrawer,R.string.open,R.string.close);
+        mToggle = new ActionBarDrawerToggle(AuthenticatedUserFeed.this, mDrawer, R.string.open, R.string.close);
         mToggle.syncState();
         mDrawer.addDrawerListener(mToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -94,8 +96,14 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Profile p = dataSnapshot.getValue(Profile.class);
-                if(p.getUserEmail().equals(email)){
+                //System.out.println(email);
+                if (p.getUserEmail().equals(email)) {
+                    uid = p.getUid();
                     username = p.getUserName();
+                    System.out.println(uid);
+                    System.out.println(username);
+                    //c.setText(username);
+
                 }
             }
 
@@ -123,11 +131,10 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
 
     }
 
-    private void logingOut()
-    {
+    private void logingOut() {
         FirebaseAuth.getInstance().signOut();
         finish();
-        startActivity(new Intent(this,HomePage.class));
+        startActivity(new Intent(this, HomePage.class));
 //        Toast.makeText(AuthenticatedUserFeed.this,username,Toast.LENGTH_SHORT).show();
     }
 
@@ -135,22 +142,23 @@ public class AuthenticatedUserFeed extends AppCompatActivity implements Navigati
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_viewU);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
     //for support action bar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(mToggle.onOptionsItemSelected(item)) {
+        if (mToggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId())
-        {
+        switch (menuItem.getItemId()) {
             case R.id.MyProfile_Drawer:
-                startActivity(new Intent(AuthenticatedUserFeed.this,MyProfile.class));
+                startActivity(new Intent(AuthenticatedUserFeed.this, MyProfile.class));
                 break;
 
             case R.id.Logout_Drawer:

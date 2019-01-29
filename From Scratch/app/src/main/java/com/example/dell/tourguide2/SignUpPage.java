@@ -29,7 +29,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class SignUpPage extends AppCompatActivity implements View.OnClickListener{
+public class SignUpPage extends AppCompatActivity implements View.OnClickListener {
 
     private ProgressDialog progressDialog;
     private EditText SignupName;
@@ -46,7 +46,7 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
 
     private DatabaseReference UserDataStorage;
     String UserData;
-    String uid;
+    static String uid;
 
     static String UserImageurl;
 
@@ -82,7 +82,7 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(SignUpPage.this,LoginPage.class));
+                startActivity(new Intent(SignUpPage.this, LoginPage.class));
             }
         });
 
@@ -92,7 +92,7 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
 
                 Intent profileImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
                 profileImageIntent.setType("image/*");
-                startActivityForResult(profileImageIntent,Gallery_Request);
+                startActivityForResult(profileImageIntent, Gallery_Request);
 
             }
         });
@@ -102,8 +102,7 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==Gallery_Request && resultCode==RESULT_OK)
-        {
+        if (requestCode == Gallery_Request && resultCode == RESULT_OK) {
             ProfileImageUri = data.getData();
             ProfileImage.setImageURI(ProfileImageUri);
         }
@@ -117,45 +116,39 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
         final String email = SignupEmail.getText().toString().trim();
         String password = SignupPassword.getText().toString();
 
-        if (name.isEmpty())
-        {
+        if (name.isEmpty()) {
             SignupName.setError("Name Required ");
             SignupName.requestFocus();
             return;
         }
-        if(email.isEmpty())
-        {
-             SignupEmail.setError("Email Required " );
-             SignupEmail.requestFocus();
-             return;
+        if (email.isEmpty()) {
+            SignupEmail.setError("Email Required ");
+            SignupEmail.requestFocus();
+            return;
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
-        {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             SignupEmail.setError("Valid Email Required ");
             SignupPassword.requestFocus();
             return;
         }
-        if (password.isEmpty())
-        {
+        if (password.isEmpty()) {
             SignupPassword.setError("Password Required ");
             SignupPassword.requestFocus();
             return;
         }
-        if (password.length()<6)
-        {
+        if (password.length() < 6) {
             SignupPassword.setError("Enter at least 6 digit ");
             SignupPassword.requestFocus();
             return;
         }
 
-       progressDialog.show();
+        progressDialog.show();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful())
-                        {
+                        if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             //Log.d(TAG, "createUserWithEmail:success");
                             //FirebaseUser user = mAuth.getCurrentUser();
@@ -166,37 +159,37 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             uid = user.getUid();
 
-                            if(ProfileImageUri != null)
-                            {
+                            if (ProfileImageUri != null) {
                                 StorageReference filepath = profileImageStore.child(ProfileImageUri.getLastPathSegment());
 
                                 filepath.putFile(ProfileImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                                     @Override
                                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                        Uri downloadUri =taskSnapshot.getDownloadUrl();
+                                        Uri downloadUri = taskSnapshot.getDownloadUrl();
 
-                                        UserInformation userInformation = new UserInformation(name,email,uid,downloadUri.toString());
-                                        UserDataStorage.child("Users:").child(name).setValue(userInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        UserInformation userInformation = new UserInformation(name, email, uid, downloadUri.toString());
+                                        ///key changed
+                                        UserDataStorage.child("Users:").child(uid).setValue(userInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task1) {
-                                                if(task1.isSuccessful())
-                                                    Toast.makeText(SignUpPage.this,"Successfull",Toast.LENGTH_SHORT).show();
+                                                if (task1.isSuccessful())
+                                                    Toast.makeText(SignUpPage.this, "Successfull", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                                         finish();
-                                        startActivity(new Intent(SignUpPage.this,AuthenticatedUserFeed.class));
+                                        Intent intent = new Intent(SignUpPage.this, AuthenticatedUserFeed.class);
+                                        startActivity(intent);
+                                        //startActivity(new Intent(SignUpPage.this, AuthenticatedUserFeed.class));
                                     }
                                 });
 
                             }
 
-                        }
-                        else
-                        {
+                        } else {
                             // If sign in fails, display a message to the user.
                             //Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             //Toast.makeText(this, "Authentication failed.",
-                              //      Toast.LENGTH_SHORT).show();
+                            //      Toast.LENGTH_SHORT).show();
                             //updateUI(null);
 
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {
@@ -209,9 +202,6 @@ public class SignUpPage extends AppCompatActivity implements View.OnClickListene
 
                     }
                 });
-
-
-
 
 
     }

@@ -5,40 +5,42 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class UserInformation {
 
-    private String Name, Email , UID , ProfileImageurl;
+    private String Name, Email, UID, ProfileImageurl;
 
-    public UserInformation(String name, String email, String uid,String profileImageurl) {
+    public UserInformation() {
+
+    }
+
+    public UserInformation(String name, String email, String uid, String profileImageurl) {
 
         /*FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if(user != null)
         {*/
-            Name = name;
-            Email = email;
-            UID =uid;
-            ProfileImageurl = profileImageurl;
+        Name = name;
+        Email = email;
+        UID = uid;
+        ProfileImageurl = profileImageurl;
         //}
     }
 
-    public String getUserName()
-    {
+    public String getUserName() {
         return Name;
     }
-    public void setUserName(String Name)
-    {
+
+    public void setUserName(String Name) {
         this.Name = Name;
     }
 
-    public String getUserEmail()
-    {
+    public String getUserEmail() {
         return Email;
     }
-    public void setUserEmail(String Email)
-    {
+
+    public void setUserEmail(String Email) {
         this.Email = Email;
     }
-    public String getUID()
-    {
+
+    public String getUID() {
         return UID;
     }
 

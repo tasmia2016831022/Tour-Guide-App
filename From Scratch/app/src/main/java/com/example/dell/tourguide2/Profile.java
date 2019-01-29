@@ -1,5 +1,6 @@
 package com.example.dell.tourguide2;
 
+///this is for data snapshot on authenticatedUserFeed
 public class Profile {
     public Profile(String userName, String userEmail, String uid) {
         this.userName = userName;
@@ -7,9 +8,9 @@ public class Profile {
         this.uid = uid;
     }
 
-    String userName,userEmail,uid;
+    String userName, userEmail, uid;
 
-    Profile(){
+    Profile() {
 
     }
 
