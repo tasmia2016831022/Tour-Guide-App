@@ -6,8 +6,8 @@ Features included:
 1) Authentication (using Firebase)
 2) Creating Post 
 3) Search by Location & Type (Food , Hotel, Places)
-4)Show in map (radius 10 km)
-5)Showed in Detailed Post 
+4) Show in map (radius 10 km)
+5) Showed in Detailed Post 
 
 OnGoing :
 ---------
