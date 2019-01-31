@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "809446340528",
+    "firebase_url": "https://tourguidefinal.firebaseio.com",
+    "project_id": "tourguidefinal",
+    "storage_bucket": "tourguidefinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809446340528:android:5fee429cd37f57c2",
+        "android_client_info": {
+          "package_name": "com.example.dell.tourguidefinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809446340528-q2ga919ugjr1ap0l719qls0c14ieing1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dell.tourguidefinal",
+            "certificate_hash": "04028d388bd6ec7c6700ed2f258e25c3e4a06736"
+          }
+        },
+        {
+          "client_id": "809446340528-k6brdkp09ca3rkvds8anrj3bqahbn1ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKmvDw4zU7B4p70xkhw4DdswuU1fxE2M8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809446340528-k6brdkp09ca3rkvds8anrj3bqahbn1ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

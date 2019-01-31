@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="119dp"
+        android:layout_height="116dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp"
+        app:srcCompat="@drawable/tour_guide_logo" />
+
+    <EditText
+        android:id="@+id/email_login_edittext"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="238dp"
+        android:background="@drawable/edittext"
+        android:drawableLeft="@drawable/ic_mail"
+        android:drawableStart="@drawable/ic_mail"
+        android:ems="10"
+        android:hint="  Email"
+        android:inputType="textEmailAddress"
+        android:textSize="15sp"
+        android:fontFamily="@font/comfortaa_regular"/>
+
+    <EditText
+        android:id="@+id/password_login_edittext"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="228dp"
+        android:background="@drawable/edittext"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawableStart="@drawable/ic_lock"
+        android:ems="10"
+        android:hint=" Password"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        android:fontFamily="@font/comfortaa_regular"/>
+
+    <Button
+        android:id="@+id/login_login_button"
+        android:layout_width="184dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        android:background="@drawable/button_one"
+        android:text="Log in"
+        android:fontFamily="@font/comfortaa_regular"
+        android:textStyle="bold"
+        android:textColor="@color/DarkBlue"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/signup_login_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="105dp"
+        android:layout_toEndOf="@+id/app_logo"
+        android:layout_toRightOf="@id/app_logo"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="@string/Sign_Up"
+        android:textColor="@color/DarkBlue"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Dont_have_accnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/signup_login_textview"
+        android:layout_toStartOf="@+id/signup_login_textview"
+        android:layout_toLeftOf="@id/signup_login_textview"
+        android:fontFamily="@font/comfortaa_regular"
+        android:text="Don't Have An Account?"
+        android:textColor="@color/DarkBlue"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>
