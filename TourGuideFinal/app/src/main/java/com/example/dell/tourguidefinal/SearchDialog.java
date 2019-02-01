@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import static com.example.dell.tourguidefinal.MapView.arrayList;
+//import static com.example.dell.tourguidefinal.MapView.arrayList;
 
 public class SearchDialog extends AppCompatDialogFragment {
     private EditText SearchLocation,SearchRadius;

@@ -32,12 +32,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.example.dell.tourguidefinal.MapView.arrayList;
+import java.util.ArrayList;
+import java.util.List;
+
+//import static com.example.dell.tourguidefinal.MapView.arrayList;
 
 public class UserFeedActivity extends AppCompatActivity {
 
     String email;
     static String uid, username;
+
+    public static List<PostingSupport> arrayList = new ArrayList<>();
 
     FloatingActionButton plus, createPost, searchLocation, myProfile;
     Animation fabOpen, fabClose, rotateColckwise, rotateAnticlockwise;
@@ -111,6 +116,9 @@ public class UserFeedActivity extends AppCompatActivity {
         myProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                MyProfileDialogue myProfileDialogue = new MyProfileDialogue();
+                myProfileDialogue.show(getSupportFragmentManager(),"my profile");
 
             }
         });

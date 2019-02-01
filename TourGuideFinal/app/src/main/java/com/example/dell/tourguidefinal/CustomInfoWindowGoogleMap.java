@@ -27,13 +27,27 @@ public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter {
         View view = ((Activity) context).getLayoutInflater()
                 .inflate(R.layout.map_pop_up, null);
 
-        TextView placeName = view.findViewById(R.id.catagoryName);
+        /*TextView placeName = view.findViewById(R.id.catagoryName);
         TextView catagoryType = view.findViewById(R.id.catagoryType);
-        ImageView img = view.findViewById(R.id.mapImage);
+        ImageView img = view.findViewById(R.id.mapImage);*/
 
-        catagoryType.setText(marker.getTitle());
-        placeName.setText(marker.getSnippet());
+        TextView areaName = view.findViewById(R.id.PostAreaName);
+        ImageView img = view.findViewById(R.id.PostImage);
+        TextView postName = view.findViewById(R.id.PostName);
+        TextView descriptin = view.findViewById(R.id.PostDescription);
+        TextView postContributor = view.findViewById(R.id.postContributor);
+
+        TextView type = view.findViewById(R.id.postType);
+
+
+        type.setText(marker.getTitle());
+        areaName.setText(marker.getSnippet());
         PostingSupport postingSupport = (PostingSupport) marker.getTag();
+
+        postName.setText(postingSupport.getName());
+        descriptin.setText(postingSupport.getDescription());
+        postContributor.setText(postingSupport.getUserName());
+
 
         try {
             Picasso.get().load(postingSupport.getImageuri()).into(img);

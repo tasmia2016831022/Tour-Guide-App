@@ -33,6 +33,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.dell.tourguidefinal.UserFeedActivity.arrayList;
+
 public class MapView extends Fragment implements OnMapReadyCallback {
 
     String DefaultLocation;
@@ -45,7 +47,7 @@ public class MapView extends Fragment implements OnMapReadyCallback {
     ArrayList<PostingSupport> UserArrayList = new ArrayList<>();
     static DatabaseReference mDatabase;
     private static Address hostAddress;
-    public static List<PostingSupport> arrayList = new ArrayList<>();
+
 
     private static LatLng t_latLng;
 
@@ -56,6 +58,10 @@ public class MapView extends Fragment implements OnMapReadyCallback {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.show_mapview, container, false);
+
+
+
+
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Posts");
         DefaultLocation = "SUST";
 
@@ -72,7 +78,7 @@ public class MapView extends Fragment implements OnMapReadyCallback {
         UserLocation = SearchDialog.getQloaction();
         type = SearchDialog.getQtype();
         radius = SearchDialog.getQradius();
-
+        arrayList.removeAll(arrayList);
         CircleOptions circleOptions = new CircleOptions();
         MarkerOptions markerOptions = new MarkerOptions();
 
@@ -127,10 +133,8 @@ public class MapView extends Fragment implements OnMapReadyCallback {
                             */
                             if (results[0] / 1000 <= Float.valueOf(radius)) {
                                 arrayList.add(gpi);
-                                Log.d("Check","arrayList");
-                                for(i=0;i<=arrayList.size();i++) {
-                                    System.out.println("array " + arrayList);
-                                }
+                                Log.d("Check",gpi.getArea());
+
                                 markerOptions.position(latLng);
                                 markerOptions.title(type);
                                 markerOptions.snippet(gpi.getArea());
@@ -144,6 +148,8 @@ public class MapView extends Fragment implements OnMapReadyCallback {
                             }
 
                         }
+                        //Log.d("Array Size :" ,Integer.toString(arrayList.size()));
+
 
                     }
 

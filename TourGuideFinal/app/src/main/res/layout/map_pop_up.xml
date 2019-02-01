@@ -2,45 +2,88 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/mapImage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/catagory"
+            android:id="@+id/PostAreaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Catagory : "
-            android:textSize="20sp"
-            android:textColor="#000000"
+            android:fontFamily="@font/comfortaa_regular"
+            android:text="Area"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/catagoryType"
+        <ImageView
+            android:id="@+id/PostImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FHP"
-            android:textSize="20sp" />
-    </LinearLayout>
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/catagoryName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="name"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColorHighlight="@color/colorPrimaryDark"/>
+            <TextView
+                android:id="@+id/PostName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa_regular"
+                android:text="Name"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:text="Type:"
+                android:textSize="20dp"
+                android:fontFamily="@font/comfortaa_regular"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/postType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="type"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:fontFamily="@font/comfortaa_regular"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/PostDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description of a type will be saved here user will post here"
+            android:textSize="15dp"
+            android:paddingTop="5dp"/>
+
+        <TextView
+            android:id="@+id/postContributor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="username"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:fontFamily="@font/comfortaa_regular"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:paddingTop="5dp"/>
+
+
+    </LinearLayout>
 
 
 

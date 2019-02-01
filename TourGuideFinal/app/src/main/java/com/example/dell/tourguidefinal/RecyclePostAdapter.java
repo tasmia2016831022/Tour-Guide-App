@@ -10,13 +10,18 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import static com.example.dell.tourguidefinal.MapView.arrayList;
+import java.util.List;
+
+//import static com.example.dell.tourguidefinal.MapView.arrayList;
 
 public class RecyclePostAdapter extends RecyclerView.Adapter<RecycleViewHolder>{
 
     private Context context;
+    private List<PostingSupport>postingSupportList;
 
-    public RecyclePostAdapter(Context context) {
+    public RecyclePostAdapter(List<PostingSupport>postingSupportList,Context context) {
+
+        this.postingSupportList=postingSupportList;
         this.context = context;
     }
 
@@ -31,7 +36,7 @@ public class RecyclePostAdapter extends RecyclerView.Adapter<RecycleViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull RecycleViewHolder recycleViewHolder, int i) {
 
-        PostingSupport Postingposition = arrayList.get(i);
+        PostingSupport Postingposition = postingSupportList.get(i);
         RecycleViewHolder.PostArea.setText(Postingposition.getArea());
         RecycleViewHolder.PostType.setText(Postingposition.getType());
         RecycleViewHolder.PostName.setText(Postingposition.getName());
@@ -41,18 +46,18 @@ public class RecyclePostAdapter extends RecyclerView.Adapter<RecycleViewHolder>{
 
         Picasso.get().load(Postingposition.getImageuri()).into(RecycleViewHolder.PostImage);
 
-        RecycleViewHolder.PostImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-              //  Toast.makeText(context, Postingposition.getArea(),Toast.LENGTH_SHORT).show();
-            }
-        });
+//        RecycleViewHolder.PostImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//              //  Toast.makeText(context, Postingposition.getArea(),Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
         //return 0;
-        return arrayList.size();
+        return postingSupportList.size();
     }
 }
