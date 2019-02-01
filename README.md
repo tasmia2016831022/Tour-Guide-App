@@ -8,11 +8,11 @@ Features included:
 3) Search by Location & Type (Food , Hotel, Places)
 4) Show in map (radius 10 km)
 5) Showed in Detailed Post 
+6) Radius Fixation
+7) Fragmented UI(Tab switching)
 
-OnGoing :
----------
-1) UI enhancing 
-2) Post Contributor Information Show
-3) User can fix the radius 
-4) Multiple Image Uploading 
-5) Fixation of Intent Switching 
+ Bugs:
+ -------
+ 1) Major Bug in PostView , cannot resolve issue due to fragment communication
+ 2) Cannot show Post contributor name ( forgot that to resolve in time)
+ 
